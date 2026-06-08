@@ -73,12 +73,14 @@
   /* ---------- works ---------- */
   function buildWorks() {
     var g = $('#works'); g.innerHTML = '';
-    D.projects.forEach(function (p, i) {
-      var w = el('div', 'work reveal');
+    var list = D.projects.slice().sort(function (a, b) { return (b.feat ? 1 : 0) - (a.feat ? 1 : 0); });
+    list.forEach(function (p, i) {
+      var w = el('div', 'work reveal' + (p.feat ? ' is-feat' : ''));
       var url = 'https://github.com/slipalison/' + p.repo;
+      var tag = p.feat ? '<span class="work-feat">' + (lang === 'en' ? 'Featured' : 'Destaque') + '</span>' : '';
       w.innerHTML =
-        '<div class="work-top"><a class="work-name" href="' + url + '" target="_blank" rel="noopener">' + esc(p.name) + '</a>' +
-        '<span class="work-idx">' + pad2(i + 1) + ' / ' + pad2(D.projects.length) + '</span></div>' +
+        '<div class="work-top"><span class="work-name-wrap"><a class="work-name" href="' + url + '" target="_blank" rel="noopener">' + esc(p.name) + '</a>' + tag + '</span>' +
+        '<span class="work-idx">' + pad2(i + 1) + ' / ' + pad2(list.length) + '</span></div>' +
         '<div class="work-lang">' + esc(p.lang) + ' <span class="star" data-repo="' + p.repo + '"></span></div>' +
         '<p class="work-desc">' + esc(p[lang]) + '</p>' +
         '<a class="work-go" href="' + url + '" target="_blank" rel="noopener">' + (lang === 'en' ? 'View repository ↗' : 'Ver repositório ↗') + '</a>';

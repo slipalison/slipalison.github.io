@@ -222,7 +222,7 @@ window.SITE_DATA = {
       en: 'Agnostic multi-agent orchestration platform: builds and orchestrates agents with local LLMs (Ollama), decomposes tasks into micro-tasks and live-streams reasoning and tool calls.',
     },
     {
-      name: 'moodline', repo: 'moodline', lang: 'JavaScript', accent: '#f1e05a',
+      name: 'moodline', repo: 'moodline', lang: 'JavaScript', accent: '#f1e05a', feat: true,
       pt: 'Statusline divertida e informativa para CLIs de IA (Claude Code, Copilot CLI): barra de contexto em gradiente, git, custo e trocadilhos de dev.',
       en: 'Fun, informative statusline for AI CLIs (Claude Code, Copilot CLI): gradient context bar, git, cost and dev puns.',
     },
@@ -237,7 +237,7 @@ window.SITE_DATA = {
       en: 'Full-stack application (C# + TypeScript) — simulator with a robust backend and typed front-end. One of the largest projects on the profile.',
     },
     {
-      name: 'jdi-cli', repo: 'jdi-cli', lang: 'PowerShell', accent: '#012456',
+      name: 'jdi-cli', repo: 'jdi-cli', lang: 'PowerShell', accent: '#012456', feat: true,
       pt: 'Ferramenta de linha de comando multiplataforma (PowerShell · Shell · JavaScript) para produtividade de desenvolvimento.',
       en: 'Cross-platform command-line tool (PowerShell · Shell · JavaScript) for developer productivity.',
     },
