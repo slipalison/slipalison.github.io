@@ -56,12 +56,21 @@ window.SITE_DATA = {
   // grid de competências
   stack: [
     {
-      icon: '⟨⟩', pt: 'Linguagens', en: 'Languages',
-      items: ['C#', '.NET / .NET Core', 'Node.js', 'TypeScript', 'Go', 'Java', 'ASP.NET'],
+      icon: '◆', pt: 'Liderança & Gestão', en: 'Leadership & Management',
+      items: ['Liderança técnica', 'Mentoria', 'One-on-ones', 'Kanban', 'Roadmaps', 'OKRs & KPIs', 'Recrutamento', 'Desenvolvimento de carreira'],
     },
     {
-      icon: '◈', pt: 'Arquitetura', en: 'Architecture',
-      items: ['Microservices', 'Sistemas distribuídos', 'REST APIs', 'WebSocket', 'FIX Protocol', 'Match Engine', 'Clean Code'],
+      icon: '✦', pt: 'Inteligência Artificial', en: 'Artificial Intelligence',
+      items: ['Claude API', 'Model Context Protocol', 'Agent Skills', 'Claude Code', 'Agentes de IA', 'Multi-agente', 'RAG', 'Guardrails'],
+    },
+    {
+      icon: '◈', pt: 'Arquitetura & Code Design', en: 'Architecture & Code Design',
+      hi: ['DDD', 'The Method', 'Hexagonal', 'Vertical Slice', 'Clean Architecture', 'CQRS', 'Event Sourcing'],
+      items: ['Microservices', 'Sistemas distribuídos', 'REST APIs', 'WebSocket', 'FIX Protocol', 'Match Engine', 'SOLID', 'Clean Code'],
+    },
+    {
+      icon: '⟨⟩', pt: 'Linguagens', en: 'Languages',
+      items: ['C#', '.NET / .NET Core', 'Node.js', 'TypeScript', 'Go', 'Java', 'ASP.NET'],
     },
     {
       icon: '☁', pt: 'Cloud & Infra', en: 'Cloud & Infra',
@@ -80,16 +89,8 @@ window.SITE_DATA = {
       items: ['Datadog', 'Grafana', 'ELK Stack', 'BDD', 'Testes de performance', 'Mutação'],
     },
     {
-      icon: '✦', pt: 'Inteligência Artificial', en: 'Artificial Intelligence',
-      items: ['Claude API', 'Model Context Protocol', 'Agent Skills', 'Claude Code', 'Agentes de IA'],
-    },
-    {
       icon: '₿', pt: 'Domínios', en: 'Domains',
       items: ['Mercado financeiro', 'Fintech', 'BaaS', 'Blockchain', 'Tokenização', 'DREX', 'Exchanges', 'OMS / EMS'],
-    },
-    {
-      icon: '◆', pt: 'Liderança & Gestão', en: 'Leadership & Management',
-      items: ['Liderança técnica', 'Mentoria', 'One-on-ones', 'Kanban', 'Roadmaps', 'OKRs & KPIs', 'Recrutamento'],
     },
   ],
 
