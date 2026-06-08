@@ -36,9 +36,13 @@
 
   <main id="top">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-text">
+    <!-- HERO (video) -->
+    <section class="hero" id="hero">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/media/facade.jpg">
+        <source src="assets/media/facade.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-scrim"></div>
+      <div class="hero-content">
         <p class="kicker" data-en="Tech Manager — Principal Engineer">Tech Manager — Principal Engineer</p>
         <h1 class="name">
           <span class="name-l1">Alison</span>
@@ -53,13 +57,7 @@
           <li><a href="mailto:alison.amorim.mail@gmail.com">E-mail ↗</a></li>
         </ul>
       </div>
-      <figure class="portrait" id="portrait" data-parallax data-speed="-0.06">
-        <div class="ph">
-          <span class="ph-mark">AA</span>
-          <span class="ph-label" data-en="photo here · drop assets/img/alison.jpg">foto aqui · coloque assets/img/alison.jpg</span>
-        </div>
-        <img src="assets/img/alison.jpg" alt="Alison Amorim" onerror="this.remove()" />
-      </figure>
+      <a href="#pillars" class="scroll-cue" data-en="scroll ↓">role ↓</a>
     </section>
 
     <!-- ticker -->
@@ -74,6 +72,14 @@
         <h2 class="plate-title" data-en="Three pillars">Três pilares</h2>
       </header>
       <div class="pillars" id="pillarsGrid"></div>
+    </section>
+
+    <!-- BAND 1 (facade · parallax) -->
+    <section class="band band-facade" aria-label="">
+      <div class="band-inner">
+        <p class="band-quote" data-en="The rate of change defines the architecture.">A velocidade de mudança define a arquitetura.</p>
+        <p class="band-cred" data-en="— from “The First Derivative”, on LinkedIn">— de “A Primeira Derivativa”, no LinkedIn</p>
+      </div>
     </section>
 
     <!-- ABOUT -->
@@ -113,6 +119,14 @@
         <h2 class="plate-title" data-en="Capabilities">Competências</h2>
       </header>
       <div class="caps" id="caps"></div>
+    </section>
+
+    <!-- BAND 2 (central · parallax) -->
+    <section class="band band-central" aria-label="">
+      <div class="band-inner">
+        <p class="band-quote" data-en="In distributed systems, reliability isn’t luck — it’s design.">Em sistemas distribuídos, confiabilidade não é sorte — é projeto.</p>
+        <p class="band-cred" data-en="Match engines · low latency · high throughput">Match engines · baixa latência · alto throughput</p>
+      </div>
     </section>
 
     <!-- PROJECTS (invert) -->
