@@ -6,26 +6,23 @@
   <title>Alison Amorim — Principal Engineer</title>
   <meta name="description" content="Alison Amorim — Tech Manager e Principal Engineer. 15+ anos em arquitetura de sistemas de alta performance no mercado financeiro e fintech (B3, XP Inc., Banco BS2, Bankly)." />
   <meta name="author" content="Alison Amorim" />
-  <meta name="theme-color" content="#F3EFE6" />
+  <meta name="theme-color" content="#0A0A0A" />
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Alison Amorim — Principal Engineer" />
   <meta property="og:description" content="15+ anos em arquitetura de alta performance · mercado financeiro & fintech · IA." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,9..144&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/editorial.css" />
 </head>
 <body>
-  <!-- preview ribbon -->
-  <div class="preview-flag" id="previewFlag">
-    <span data-en="PREVIEW · v2 · not published">PREVIEW · v2 · não publicado</span>
-  </div>
+  <div class="preview-flag"><span data-en="PREVIEW · v2 · not published">PREVIEW · v2 · não publicado</span></div>
 
-  <!-- masthead -->
   <header class="masthead" id="masthead">
-    <a href="#top" class="wordmark">Alison Amorim<span class="wm-dot">.</span></a>
+    <a href="#top" class="wordmark">AA<span class="wm-dot">/</span><span class="wm-full">Alison Amorim</span></a>
     <nav class="mast-nav" aria-label="Seções">
+      <a href="#pillars" data-en="Pillars">Pilares</a>
       <a href="#work" data-en="Work">Trajetória</a>
       <a href="#capabilities" data-en="Capabilities">Competências</a>
       <a href="#selected" data-en="Selected">Projetos</a>
@@ -39,40 +36,51 @@
 
   <main id="top">
 
-    <!-- MASTHEAD / HERO -->
-    <section class="lede-block">
-      <p class="kicker" data-en="Tech Manager — Principal Engineer">Tech Manager — Principal Engineer</p>
-      <h1 class="name">Alison<br><em>Amorim</em></h1>
-
-      <div class="lede-grid">
-        <p class="lede" data-en="Fifteen years architecting business-critical, high-performance platforms for capital markets and fintech — distributed systems, low-latency match engines and, lately, AI and multi-agent systems.">
-          Quinze anos arquitetando plataformas críticas e de alta performance para o mercado financeiro e fintech — sistemas distribuídos, match engines de baixa latência e, recentemente, IA e sistemas multi-agente.
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="kicker" data-en="Tech Manager — Principal Engineer">Tech Manager — Principal Engineer</p>
+        <h1 class="name">
+          <span class="name-l1">Alison</span>
+          <span class="name-l2">Amorim</span>
+        </h1>
+        <p class="hero-lede" data-en="Fifteen years architecting business-critical, high-performance platforms for capital markets and fintech.">
+          Quinze anos arquitetando plataformas críticas e de alta performance para o mercado financeiro e fintech.
         </p>
-        <aside class="colophon">
-          <dl>
-            <dt data-en="Based in">Onde</dt>
-            <dd>São Paulo, Brasil</dd>
-            <dt data-en="Focus">Foco</dt>
-            <dd data-en="Architecture · Fintech · AI">Arquitetura · Fintech · IA</dd>
-            <dt data-en="Worked at">Passagem</dt>
-            <dd>B3 · XP Inc. · BS2 · Bankly</dd>
-          </dl>
-          <ul class="links">
-            <li><a href="https://www.linkedin.com/in/alison-amorim/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-            <li><a href="https://github.com/slipalison" target="_blank" rel="noopener">GitHub ↗</a></li>
-            <li><a href="mailto:alison.amorim.mail@gmail.com">E-mail ↗</a></li>
-          </ul>
-        </aside>
+        <ul class="hero-links">
+          <li><a href="https://www.linkedin.com/in/alison-amorim/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+          <li><a href="https://github.com/slipalison" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="mailto:alison.amorim.mail@gmail.com">E-mail ↗</a></li>
+        </ul>
       </div>
+      <figure class="portrait" id="portrait" data-parallax data-speed="-0.06">
+        <div class="ph">
+          <span class="ph-mark">AA</span>
+          <span class="ph-label" data-en="photo here · drop assets/img/alison.jpg">foto aqui · coloque assets/img/alison.jpg</span>
+        </div>
+        <img src="assets/img/alison.jpg" alt="Alison Amorim" onerror="this.remove()" />
+      </figure>
+    </section>
 
-      <div class="figures" id="figures"></div>
+    <!-- ticker -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-row" id="ticker"></div>
+    </div>
+
+    <!-- PILLARS (invert) -->
+    <section class="section invert" id="pillars">
+      <header class="plate" data-parallax data-speed="0.04">
+        <span class="plate-no">01</span>
+        <h2 class="plate-title" data-en="Three pillars">Três pilares</h2>
+      </header>
+      <div class="pillars" id="pillarsGrid"></div>
     </section>
 
     <!-- ABOUT -->
     <section class="section" id="about">
-      <header class="sec-head">
-        <span class="sec-no">01</span>
-        <h2 data-en="Profile">Perfil</h2>
+      <header class="plate" data-parallax data-speed="0.04">
+        <span class="plate-no">02</span>
+        <h2 class="plate-title" data-en="Profile">Perfil</h2>
       </header>
       <div class="about-body">
         <p class="about-pull" data-en="A technology leader who applies the same engineering fundamentals consistently — regardless of the language or the stack.">
@@ -91,36 +99,36 @@
 
     <!-- EXPERIENCE -->
     <section class="section" id="work">
-      <header class="sec-head">
-        <span class="sec-no">02</span>
-        <h2 data-en="Selected experience">Trajetória</h2>
+      <header class="plate" data-parallax data-speed="0.04">
+        <span class="plate-no">03</span>
+        <h2 class="plate-title" data-en="Experience">Trajetória</h2>
       </header>
       <div class="ledger" id="ledger"></div>
     </section>
 
     <!-- CAPABILITIES -->
     <section class="section" id="capabilities">
-      <header class="sec-head">
-        <span class="sec-no">03</span>
-        <h2 data-en="Capabilities">Competências</h2>
+      <header class="plate" data-parallax data-speed="0.04">
+        <span class="plate-no">04</span>
+        <h2 class="plate-title" data-en="Capabilities">Competências</h2>
       </header>
       <div class="caps" id="caps"></div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="section" id="selected">
-      <header class="sec-head">
-        <span class="sec-no">04</span>
-        <h2 data-en="Selected work">Projetos</h2>
+    <!-- PROJECTS (invert) -->
+    <section class="section invert" id="selected">
+      <header class="plate" data-parallax data-speed="0.04">
+        <span class="plate-no">05</span>
+        <h2 class="plate-title" data-en="Selected work">Projetos</h2>
       </header>
       <div class="works" id="works"></div>
     </section>
 
     <!-- WRITING -->
     <section class="section" id="writing">
-      <header class="sec-head">
-        <span class="sec-no">05</span>
-        <h2 data-en="Writing">Artigos</h2>
+      <header class="plate" data-parallax data-speed="0.04">
+        <span class="plate-no">06</span>
+        <h2 class="plate-title" data-en="Writing">Artigos</h2>
       </header>
       <p class="sec-note" data-en="Sixty-two technical essays published on LinkedIn — on AI, software architecture, .NET performance and engineering leadership.">
         Sessenta e dois ensaios técnicos publicados no LinkedIn — sobre IA, arquitetura de software, performance .NET e liderança de engenharia.
@@ -132,18 +140,18 @@
 
     <!-- CREDENTIALS -->
     <section class="section" id="credentials">
-      <header class="sec-head">
-        <span class="sec-no">06</span>
-        <h2 data-en="Credentials">Credenciais</h2>
+      <header class="plate" data-parallax data-speed="0.04">
+        <span class="plate-no">07</span>
+        <h2 class="plate-title" data-en="Credentials">Credenciais</h2>
       </header>
       <div class="creds" id="creds"></div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="section closing" id="contact">
-      <header class="sec-head">
-        <span class="sec-no">07</span>
-        <h2 data-en="Get in touch">Contato</h2>
+    <!-- CONTACT (invert) -->
+    <section class="section invert closing" id="contact">
+      <header class="plate" data-parallax data-speed="0.04">
+        <span class="plate-no">08</span>
+        <h2 class="plate-title" data-en="Get in touch">Contato</h2>
       </header>
       <p class="closing-line" data-en="Open to technical leadership, architecture and principal engineering conversations.">
         Aberto a conversas sobre liderança técnica, arquitetura e engenharia principal.
@@ -160,13 +168,11 @@
 
   <footer class="footer">
     <span>© <span id="year"></span> Alison Amorim</span>
-    <span class="foot-note" data-en="Set in Fraunces &amp; Inter">Composto em Fraunces &amp; Inter</span>
-    <a href="#top" class="to-top" data-en="Back to top ↑">Voltar ao topo ↑</a>
+    <span class="foot-note" data-en="Set in Syne &amp; Inter">Composto em Syne &amp; Inter</span>
+    <a href="#top" class="to-top" data-en="Top ↑">Topo ↑</a>
   </footer>
 
-  <noscript>
-    <p style="padding:2rem;text-align:center">Ative o JavaScript para a experiência completa.</p>
-  </noscript>
+  <noscript><p style="padding:2rem;text-align:center">Ative o JavaScript para a experiência completa.</p></noscript>
 
   <script src="assets/js/data.js"></script>
   <script src="assets/js/app.js"></script>

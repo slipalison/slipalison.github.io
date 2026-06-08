@@ -22,6 +22,19 @@ window.SITE_DATA = {
     ],
   },
 
+  // pilares em destaque
+  pillars: [
+    { k: 'Liderança', ke: 'Leadership',
+      pt: 'Times de até 13 engenheiros, formando arquitetos e disseminando boas práticas — mentoria, roadmaps e OKRs técnicos.',
+      en: 'Teams of up to 13 engineers, growing architects and spreading best practices — mentoring, roadmaps and technical OKRs.' },
+    { k: 'Arquitetura', ke: 'Architecture',
+      pt: 'Sistemas distribuídos e microservices para o mercado financeiro — match engines de baixa latência, tokenização, exchanges e DREX.',
+      en: 'Distributed systems and microservices for capital markets — low-latency match engines, tokenization, exchanges and DREX.' },
+    { k: 'Engenharia', ke: 'Engineering',
+      pt: 'C#/.NET, Go e Node sobre Azure, AWS e Kubernetes. Resultados medidos: −99% de incidentes, +112% de resultado.',
+      en: 'C#/.NET, Go and Node on Azure, AWS and Kubernetes. Measured results: −99% incidents, +112% growth.' },
+  ],
+
   // contadores animados
   stats: [
     { value: 15, suffix: '+', pt: 'anos de experiência', en: 'years of experience' },
