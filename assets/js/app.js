@@ -90,6 +90,34 @@
     });
   }
 
+  var articlesExpanded = false;
+  function articlesToggleLabel() {
+    var n = D.articles.count;
+    if (lang === 'en') return articlesExpanded ? 'Hide list ▴' : ('Show all ' + n + ' articles ▾');
+    return articlesExpanded ? 'Ocultar lista ▴' : ('Ver todos os ' + n + ' artigos ▾');
+  }
+  function buildArticles() {
+    var g = document.getElementById('articlesFeatured'); g.innerHTML = '';
+    D.articles.featured.forEach(function (a) {
+      var card = el('a', 'article-card reveal');
+      card.href = a.u; card.target = '_blank'; card.rel = 'noopener';
+      card.innerHTML =
+        '<span class="art-tag">' + esc(a.tag) + '</span>' +
+        '<h3 class="art-title">' + esc(a.t) + '</h3>' +
+        '<span class="art-link"><span class="ci-in">in</span>' + (lang === 'en' ? 'Read on LinkedIn' : 'Ler no LinkedIn') + ' →</span>';
+      g.appendChild(card);
+    });
+    var ul = document.getElementById('articlesAll'); ul.innerHTML = '';
+    D.articles.all.forEach(function (a, i) {
+      var li = el('li', 'article-li');
+      li.innerHTML = '<a href="' + a.u + '" target="_blank" rel="noopener">' +
+        '<span class="art-num">' + ('0' + (i + 1)).slice(-2) + '</span>' +
+        '<span>' + esc(a.t) + '</span></a>';
+      ul.appendChild(li);
+    });
+    document.getElementById('articlesToggle').textContent = articlesToggleLabel();
+  }
+
   function buildCerts() {
     var g = $('#certsGrid'); g.innerHTML = '';
     D.certs.forEach(function (c) {
@@ -105,7 +133,7 @@
   }
 
   function buildAll() {
-    buildStats(); buildFacts(); buildStack(); buildTimeline(); buildProjects(); buildCerts();
+    buildStats(); buildFacts(); buildStack(); buildTimeline(); buildProjects(); buildArticles(); buildCerts();
     observeReveals();
     hydrateStars();
   }
@@ -200,11 +228,20 @@
     setLang(lang === 'pt' ? 'en' : 'pt');
   });
 
+  document.getElementById('articlesToggle').addEventListener('click', function () {
+    articlesExpanded = !articlesExpanded;
+    var ul = document.getElementById('articlesAll');
+    ul.hidden = !articlesExpanded;
+    ul.classList.toggle('show', articlesExpanded);
+    this.textContent = articlesToggleLabel();
+    if (articlesExpanded) observeReveals();
+  });
+
   /* ---------- nav scroll state + active link + progress ---------- */
   var nav = $('#nav');
   var progress = $('#scrollProgress');
   var toTop = $('#toTop');
-  var sections = ['about', 'stack', 'experience', 'projects', 'certs', 'contact'];
+  var sections = ['about', 'stack', 'experience', 'projects', 'articles', 'certs', 'contact'];
   function onScroll() {
     var y = window.scrollY;
     nav.classList.toggle('scrolled', y > 30);
