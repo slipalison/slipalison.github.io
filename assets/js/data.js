@@ -22,6 +22,19 @@ window.SITE_DATA = {
     ],
   },
 
+  // pilares em destaque
+  pillars: [
+    { k: 'Liderança', ke: 'Leadership',
+      pt: 'Times de até 13 engenheiros, formando arquitetos e disseminando boas práticas — mentoria, roadmaps e OKRs técnicos.',
+      en: 'Teams of up to 13 engineers, growing architects and spreading best practices — mentoring, roadmaps and technical OKRs.' },
+    { k: 'Arquitetura', ke: 'Architecture',
+      pt: 'Sistemas distribuídos e microservices para o mercado financeiro — match engines de baixa latência, tokenização, exchanges e DREX.',
+      en: 'Distributed systems and microservices for capital markets — low-latency match engines, tokenization, exchanges and DREX.' },
+    { k: 'Engenharia', ke: 'Engineering',
+      pt: 'C#/.NET, Go e Node sobre Azure, AWS e Kubernetes. Resultados medidos: −99% de incidentes, +112% de resultado.',
+      en: 'C#/.NET, Go and Node on Azure, AWS and Kubernetes. Measured results: −99% incidents, +112% growth.' },
+  ],
+
   // contadores animados
   stats: [
     { value: 15, suffix: '+', pt: 'anos de experiência', en: 'years of experience' },
@@ -43,12 +56,21 @@ window.SITE_DATA = {
   // grid de competências
   stack: [
     {
-      icon: '⟨⟩', pt: 'Linguagens', en: 'Languages',
-      items: ['C#', '.NET / .NET Core', 'Node.js', 'TypeScript', 'Go', 'Java', 'ASP.NET'],
+      icon: '◆', pt: 'Liderança & Gestão', en: 'Leadership & Management',
+      items: ['Liderança técnica', 'Mentoria', 'One-on-ones', 'Kanban', 'Roadmaps', 'OKRs & KPIs', 'Recrutamento', 'Desenvolvimento de carreira'],
     },
     {
-      icon: '◈', pt: 'Arquitetura', en: 'Architecture',
-      items: ['Microservices', 'Sistemas distribuídos', 'REST APIs', 'WebSocket', 'FIX Protocol', 'Match Engine', 'Clean Code'],
+      icon: '✦', pt: 'Inteligência Artificial', en: 'Artificial Intelligence',
+      items: ['Claude API', 'Model Context Protocol', 'Agent Skills', 'Claude Code', 'Agentes de IA', 'Multi-agente', 'RAG', 'Guardrails'],
+    },
+    {
+      icon: '◈', pt: 'Arquitetura & Code Design', en: 'Architecture & Code Design',
+      hi: ['DDD', 'The Method', 'Hexagonal', 'Vertical Slice', 'Clean Architecture', 'CQRS', 'Event Sourcing'],
+      items: ['Microservices', 'Sistemas distribuídos', 'REST APIs', 'WebSocket', 'FIX Protocol', 'Match Engine', 'SOLID', 'Clean Code'],
+    },
+    {
+      icon: '⟨⟩', pt: 'Linguagens', en: 'Languages',
+      items: ['C#', '.NET / .NET Core', 'Node.js', 'TypeScript', 'Go', 'Java', 'ASP.NET'],
     },
     {
       icon: '☁', pt: 'Cloud & Infra', en: 'Cloud & Infra',
@@ -67,16 +89,8 @@ window.SITE_DATA = {
       items: ['Datadog', 'Grafana', 'ELK Stack', 'BDD', 'Testes de performance', 'Mutação'],
     },
     {
-      icon: '✦', pt: 'Inteligência Artificial', en: 'Artificial Intelligence',
-      items: ['Claude API', 'Model Context Protocol', 'Agent Skills', 'Claude Code', 'Agentes de IA'],
-    },
-    {
       icon: '₿', pt: 'Domínios', en: 'Domains',
       items: ['Mercado financeiro', 'Fintech', 'BaaS', 'Blockchain', 'Tokenização', 'DREX', 'Exchanges', 'OMS / EMS'],
-    },
-    {
-      icon: '◆', pt: 'Liderança & Gestão', en: 'Leadership & Management',
-      items: ['Liderança técnica', 'Mentoria', 'One-on-ones', 'Kanban', 'Roadmaps', 'OKRs & KPIs', 'Recrutamento'],
     },
   ],
 
@@ -209,7 +223,7 @@ window.SITE_DATA = {
       en: 'Agnostic multi-agent orchestration platform: builds and orchestrates agents with local LLMs (Ollama), decomposes tasks into micro-tasks and live-streams reasoning and tool calls.',
     },
     {
-      name: 'moodline', repo: 'moodline', lang: 'JavaScript', accent: '#f1e05a',
+      name: 'moodline', repo: 'moodline', lang: 'JavaScript', accent: '#f1e05a', feat: true,
       pt: 'Statusline divertida e informativa para CLIs de IA (Claude Code, Copilot CLI): barra de contexto em gradiente, git, custo e trocadilhos de dev.',
       en: 'Fun, informative statusline for AI CLIs (Claude Code, Copilot CLI): gradient context bar, git, cost and dev puns.',
     },
@@ -224,7 +238,7 @@ window.SITE_DATA = {
       en: 'Full-stack application (C# + TypeScript) — simulator with a robust backend and typed front-end. One of the largest projects on the profile.',
     },
     {
-      name: 'jdi-cli', repo: 'jdi-cli', lang: 'PowerShell', accent: '#012456',
+      name: 'jdi-cli', repo: 'jdi-cli', lang: 'PowerShell', accent: '#012456', feat: true,
       pt: 'Ferramenta de linha de comando multiplataforma (PowerShell · Shell · JavaScript) para produtividade de desenvolvimento.',
       en: 'Cross-platform command-line tool (PowerShell · Shell · JavaScript) for developer productivity.',
     },

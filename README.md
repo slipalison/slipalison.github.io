@@ -1,24 +1,23 @@
 # slipalison.github.io
 
-Portfólio interativo de **Alison Amorim** — Tech Manager / Principal Engineer.
+Portfólio de **Alison Amorim** — Tech Manager / Principal Engineer.
 
 🔗 **Ao vivo:** https://slipalison.github.io/
 
-Site estático (HTML/CSS/JS puro, sem build) com tema dark elegante, fundo aurora animado, contadores, timeline de carreira, grid de stack, projetos extraídos dos repositórios e **toggle de idioma PT/EN**. Conteúdo derivado do currículo profissional.
+Site estático (HTML/CSS/JS puro, sem build). Tema **editorial preto & branco**, tipografia bold (Syne), hero em vídeo, faixas com parallax, **toggle de idioma PT/EN** e carrossel de artigos com **embeds do LinkedIn** filtrados por categoria. Conteúdo derivado do currículo profissional.
 
 ## Estrutura
 
 ```
-index.html              # estrutura + conteúdo PT inline (data-en p/ toggle)
-assets/css/styles.css   # tema dark elegante + gradiente, animações, responsivo
-assets/js/data.js       # conteúdo bilíngue (stats, stack, timeline, projetos, certs)
-assets/js/app.js        # i18n, typing, count-up, scroll reveal, spotlight, stars ao vivo
-favicon.svg             # monograma AA em gradiente
+index.html               # estrutura + conteúdo PT inline (data-en p/ toggle) + SEO (JSON-LD Person)
+assets/css/editorial.css # tema P&B editorial, grids, parallax, responsivo
+assets/js/data.js        # conteúdo bilíngue (pilares, stats, stack, timeline, projetos, artigos, certs)
+assets/js/app.js         # i18n, builders, carrossel de embeds, parallax, scroll reveal
+assets/media/            # vídeo do hero (fachada) + imagens das faixas (P&B)
+favicon.svg · robots.txt · sitemap.xml
 ```
 
 ## Rodar localmente
-
-Qualquer servidor estático. Ex.:
 
 ```bash
 python -m http.server 8080
@@ -27,12 +26,18 @@ python -m http.server 8080
 
 ## Recursos
 
-- 🌗 Tema dark elegante com gradiente violeta → azul e fundo aurora animado
-- 🌐 Bilíngue PT/EN (persiste a escolha em `localStorage`)
-- ⌨️ Efeito de digitação rotativo · contadores animados · scroll reveal
-- ⭐ Contagem de estrelas dos repositórios hidratada ao vivo pela API do GitHub
+- ⬛ Editorial preto & branco, tipografia Syne bold, seções full-bleed alternando preto/branco
+- 🎬 Hero em vídeo + faixas com parallax (`background-attachment: fixed`)
+- 🌐 Bilíngue PT/EN (persiste em `localStorage`)
+- 🗂️ Carrossel de artigos com embeds do LinkedIn, filtrável por categoria (IA, Arquitetura, Performance, Liderança, Práticas)
+- 🔎 SEO: JSON-LD `Person`, Open Graph, sitemap
+- ⭐ Contagem de estrelas dos repos hidratada ao vivo pela API do GitHub
 - ♿ Respeita `prefers-reduced-motion` · responsivo
 
 ---
 
-Feito com capricho. Sem frameworks, sem build step.
+Sem frameworks, sem build step.
+
+## Atualizar artigos
+
+Para adicionar um artigo: inclua `{ t: 'Título', u: 'https://www.linkedin.com/feed/update/urn:li:activity:ID/' }` no array `articles.all` em `assets/js/data.js` e mapeie a categoria pelo ID em `CAT_BY_ID` (`assets/js/app.js`). Os contadores dos filtros se atualizam sozinhos.
