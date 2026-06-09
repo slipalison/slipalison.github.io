@@ -187,8 +187,27 @@ h1, h2, h3, .name, .plate-title, .pill-title, .work-name, .ph-mark { font-family
 .car-note::before { content: '⌧ '; opacity: .6; }
 
 @media (max-width: 900px) {
-  .car-track { grid-template-columns: 1fr; }
-  .car-btn { width: 42px; font-size: 1.3rem; }
+  .carousel {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "track track"
+      "prev  next";
+    gap: .8rem 1rem;
+  }
+  .car-track { grid-area: track; grid-template-columns: 1fr; }
+  .car-prev { grid-area: prev; justify-self: start; }
+  .car-next { grid-area: next; justify-self: end; }
+  .car-btn {
+    width: auto;
+    min-height: 0;
+    height: auto;
+    padding: .45rem .75rem;
+    border: none;
+    background: none;
+    font-size: 1.7rem;
+    line-height: 1;
+  }
+  .car-btn:hover { background: none; color: var(--ink); }
   .car-embed { height: 620px; }
 }
 
