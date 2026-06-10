@@ -79,7 +79,7 @@ window.SITE_DATA = {
   // timeline de experiência (mais recente primeiro)
   experience: [
     {
-      company: 'Blip', period: { pt: '2026 — presente', en: '2026 — present' },
+      company: 'Blip.ia', period: { pt: '04/2026 — presente', en: '04/2026 — present' },
       role: { pt: 'Senior Staff Engineer', en: 'Senior Staff Engineer' },
       tags: ['IA', 'Contato inteligente', 'Mercado financeiro', 'Crédito'],
       bullets: {
