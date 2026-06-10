@@ -31,26 +31,8 @@ window.SITE_DATA = {
       pt: 'Sistemas distribuídos e microservices para o mercado financeiro — match engines de baixa latência, tokenização, exchanges e DREX.',
       en: 'Distributed systems and microservices for capital markets — low-latency match engines, tokenization, exchanges and DREX.' },
     { k: 'Engenharia', ke: 'Engineering',
-      pt: 'C#/.NET, Go e Node sobre Azure, AWS e Kubernetes. Resultados medidos: −99% de incidentes, +112% de resultado.',
-      en: 'C#/.NET, Go and Node on Azure, AWS and Kubernetes. Measured results: −99% incidents, +112% growth.' },
-  ],
-
-  // contadores animados
-  stats: [
-    { value: 15, suffix: '+', pt: 'anos de experiência', en: 'years of experience' },
-    { value: 99, suffix: '%', pt: 'redução de incidentes (XP Inc.)', en: 'incident reduction (XP Inc.)' },
-    { value: 112, suffix: '%', pt: 'crescimento em 9 meses (Bankly)', en: 'growth in 9 months (Bankly)' },
-    { value: 13, suffix: '', pt: 'engenheiros liderados (B3)', en: 'engineers led (B3)' },
-  ],
-
-  // cartão "resumo rápido" no Sobre
-  facts: [
-    { pt: 'Tech Manager / Principal Engineer', en: 'Tech Manager / Principal Engineer' },
-    { pt: '15+ anos em engenharia & arquitetura', en: '15+ years in engineering & architecture' },
-    { pt: 'B3 · XP Inc. · Banco BS2 · Bankly', en: 'B3 · XP Inc. · Banco BS2 · Bankly' },
-    { pt: 'Co-construtor da Bankly (1ª BaaS do Brasil)', en: 'Co-builder of Bankly (Brazil’s first BaaS)' },
-    { pt: 'Foco: performance, escala & confiabilidade', en: 'Focus: performance, scale & reliability' },
-    { pt: '62 artigos técnicos publicados no LinkedIn', en: '62 technical articles published on LinkedIn' },
+      pt: 'C#/.NET, Go e Node sobre Azure, AWS e Kubernetes. Resultados medidos: −99% de incidentes, +112% de receita.',
+      en: 'C#/.NET, Go and Node on Azure, AWS and Kubernetes. Measured results: −99% incidents, +112% revenue.' },
   ],
 
   // grid de competências
@@ -73,11 +55,11 @@ window.SITE_DATA = {
       items: ['C#', '.NET / .NET Core', 'Node.js', 'TypeScript', 'Go', 'Java', 'ASP.NET'],
     },
     {
-      icon: '☁', pt: 'Cloud & Infra', en: 'Cloud & Infra',
+      icon: '☁︎', pt: 'Cloud & Infra', en: 'Cloud & Infra',
       items: ['Azure', 'AWS', 'GCP', 'Kubernetes', 'Docker', 'Azure Functions', 'AWS Lambda'],
     },
     {
-      icon: '⛁', pt: 'Dados', en: 'Data',
+      icon: '◫', pt: 'Dados', en: 'Data',
       items: ['Redis', 'PostgreSQL', 'SQL Server'],
     },
     {
@@ -96,6 +78,21 @@ window.SITE_DATA = {
 
   // timeline de experiência (mais recente primeiro)
   experience: [
+    {
+      company: 'Blip', period: { pt: '2026 — presente', en: '2026 — present' },
+      role: { pt: 'Senior Staff Engineer', en: 'Senior Staff Engineer' },
+      tags: ['IA', 'Contato inteligente', 'Mercado financeiro', 'Crédito'],
+      bullets: {
+        pt: [
+          'Integração de IA em plataformas de contato inteligente para sistemas do mercado financeiro.',
+          'Soluções conversacionais que elevam a conversão de adesão de crédito em diversos bancos.',
+        ],
+        en: [
+          'AI integration into intelligent-contact platforms for financial-market systems.',
+          'Conversational solutions raising credit-adoption conversion across several banks.',
+        ],
+      },
+    },
     {
       company: 'B3', period: '10/2025 — 03/2026',
       role: { pt: 'Tech Leader / Coordenador de Engenharia', en: 'Tech Leader / Engineering Coordinator' },
@@ -171,12 +168,12 @@ window.SITE_DATA = {
       bullets: {
         pt: [
           'Co-construção de um banco digital do zero (Acesso Card → Bankly), uma das primeiras plataformas BaaS do Brasil, depois adquirida pelo Banco BV.',
-          'Plataforma corporativa de cartões pré-pagos com crescimento de 112% em resultados em 9 meses.',
+          'Plataforma corporativa de cartões pré-pagos com crescimento de receita de 112% em 9 meses.',
           'Integrações bancárias completas; migração de Azure para AWS; APIs com Docker, Azure Functions e AWS Lambda.',
         ],
         en: [
           'Co-built a digital bank from scratch (Acesso Card → Bankly), one of Brazil’s first BaaS platforms, later acquired by Banco BV.',
-          'Corporate prepaid-card platform with 112% growth in results over 9 months.',
+          'Corporate prepaid-card platform with 112% revenue growth over 9 months.',
           'Complete banking integrations; Azure-to-AWS migration; APIs with Docker, Azure Functions and AWS Lambda.',
         ],
       },
@@ -251,7 +248,6 @@ window.SITE_DATA = {
 
   // artigos publicados no LinkedIn (fonte: _meta/artigos-alison-amorim.md)
   articles: {
-    count: 62,
     profileUrl: 'https://www.linkedin.com/in/alison-amorim/recent-activity/articles/',
     featured: [
       { tag: 'Liderança & IA', t: 'Da dívida técnica à dívida cognitiva: liderando times na era da IA', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7432745022711750656/' },
@@ -262,7 +258,7 @@ window.SITE_DATA = {
       { tag: 'Governança', t: 'Governança de Modelos: Quem Assina em Baixo Quando a IA Erra?', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7465692123263086593/' },
     ],
     all: [
-      { t: 'Thread Safety em .NET: exemplos práticos para não "quebrar" sob concorrência', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7380968832477159425/' },
+      { t: 'Thread Safety em .NET: exemplos práticos para não “quebrar” sob concorrência', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7380968832477159425/' },
       { t: 'Governança de Modelos: Quem Assina em Baixo Quando a IA Erra?', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7465692123263086593/' },
       { t: 'From Batch to Real Time: IA em Baixa Latência Para Casos Críticos', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7464604962849902592/' },
       { t: 'Arquiteturas Híbridas: Misturando Modelos Grandes, Pequenos e Regras Clássicas', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7462792990118502400/' },
@@ -278,11 +274,11 @@ window.SITE_DATA = {
       { t: 'Orquestração de Fluxos de IA: De um Prompt Solto para um Workflow Confiável', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7450109414692339712/' },
       { t: 'MCPs, Plugins e Ecossistemas: Colando Sua Plataforma no Cérebro dos Modelos', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7449384659542728704/' },
       { t: 'Skills e Ferramentas: Quando o LLM Precisa Apertar Parafusos no Seu Stack', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7447672882652094465/' },
-      { t: 'Data Lake Para IA: Do "Joga No S3" ao "Consigo Explicar de Onde Saiu Essa Resposta"', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7446847939034996736/' },
+      { t: 'Data Lake Para IA: Do “Joga No S3” ao “Consigo Explicar de Onde Saiu Essa Resposta”', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7446847939034996736/' },
       { t: 'RAG Sem Romance: Como Fazer Busca + Contexto Que Não Vira Máquina de Alucinação', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7445035995772829696/' },
       { t: 'Arquitetura de Um Backend Pronto Para IA: Contexto, Logs e Telemetria Desde o Dia 1', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7444386729945616384/' },
       { t: 'Do Prompt ao Produto: Desenhando Features de IA Com User Journey e Não Com Hype', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7442499298451243009/' },
-      { t: 'Avaliar Qualidade de Resposta de IA Sem Ficar Perguntando no Slack: "O Que Vocês Acharam Disso?"', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7441774493506621440/' },
+      { t: 'Avaliar Qualidade de Resposta de IA Sem Ficar Perguntando no Slack: “O Que Vocês Acharam Disso?”', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7441774493506621440/' },
       { t: 'Guardrails: Colocando Cinto de Segurança em LLM Antes Que o Jurídico Descubra', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7440324948180537344/' },
       { t: 'Como Escolher Entre ChatGPT, Claude, Gemini, Mistral e Modelo Open Source Sem Virar Fanboy', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7439237790359248896/' },
       { t: 'Barbara Liskov: A mulher que redefiniu abstrações e contratos em software', u: 'https://www.linkedin.com/feed/update/urn:li:activity:7437425871776296960/' },
@@ -351,7 +347,7 @@ window.SITE_DATA = {
       },
     },
     {
-      icon: '🎓', pt: 'Formação', en: 'Education', year: '',
+      icon: '◈', pt: 'Formação', en: 'Education', year: '',
       lines: {
         pt: ['Tecnólogo em Análise e Desenvolvimento de Sistemas — Impacta Tecnologia'],
         en: ['Technologist in Systems Analysis & Development — Impacta Tecnologia'],

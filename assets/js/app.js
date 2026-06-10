@@ -14,10 +14,19 @@
   /* ---------- i18n ---------- */
   var staticNodes = Array.prototype.slice.call(document.querySelectorAll('[data-en]'));
   staticNodes.forEach(function (n) { n.dataset.pt = n.innerHTML; });
+  var ARIA = {
+    pt: { carPrev: 'Anterior', carNext: 'Próximo', langSwitch: 'Idioma', nav: 'Seções' },
+    en: { carPrev: 'Previous', carNext: 'Next', langSwitch: 'Language', nav: 'Sections' },
+  };
   function applyStaticLang() {
     staticNodes.forEach(function (n) { n.innerHTML = (lang === 'en') ? n.dataset.en : n.dataset.pt; });
     document.documentElement.lang = (lang === 'en') ? 'en' : 'pt-BR';
     document.querySelectorAll('.lang-switch [data-lang]').forEach(function (o) { o.classList.toggle('on', o.dataset.lang === lang); });
+    var a = ARIA[lang];
+    $('#carPrev').setAttribute('aria-label', a.carPrev);
+    $('#carNext').setAttribute('aria-label', a.carNext);
+    $('#langSwitch').setAttribute('aria-label', a.langSwitch);
+    $('.mast-nav').setAttribute('aria-label', a.nav);
   }
 
   /* ---------- ticker ---------- */
@@ -48,10 +57,11 @@
     var g = $('#ledger'); g.innerHTML = '';
     D.experience.forEach(function (e) {
       var row = el('div', 'ledger-row reveal');
+      var period = typeof e.period === 'object' ? e.period[lang] : e.period;
       var bullets = e.bullets[lang].map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('');
       var tags = e.tags.map(function (t) { return '<span class="lr-tag">' + esc(t) + '</span>'; }).join('');
       row.innerHTML =
-        '<div class="lr-left"><div class="lr-period">' + esc(e.period) + '</div>' +
+        '<div class="lr-left"><div class="lr-period">' + esc(period) + '</div>' +
         '<div class="lr-company">' + esc(e.company) + '</div></div>' +
         '<div class="lr-right"><div class="lr-role">' + esc(e.role[lang]) + '</div>' +
         '<ul class="lr-bullets">' + bullets + '</ul><div class="lr-tags">' + tags + '</div></div>';
@@ -130,6 +140,7 @@
     CATS.forEach(function (c) {
       var n = c.k === 'all' ? D.articles.all.length : D.articles.all.filter(function (a) { return catOf(a.u) === c.k; }).length;
       var b = el('button', 'art-cat' + (c.k === artFilter ? ' on' : ''));
+      b.setAttribute('aria-pressed', c.k === artFilter ? 'true' : 'false');
       b.innerHTML = esc(c[lang]) + ' <span class="ac-n">' + n + '</span>';
       b.addEventListener('click', function () { artFilter = c.k; artPage = 0; buildCats(); buildCarousel(); });
       g.appendChild(b);
@@ -151,7 +162,7 @@
 
   var tocOpen = false;
   function tocLabel() {
-    var n = D.articles.count;
+    var n = D.articles.all.length;
     if (lang === 'en') return tocOpen ? '— close index' : '+ all ' + n + ' articles';
     return tocOpen ? '— fechar índice' : '+ todos os ' + n + ' artigos';
   }
@@ -162,7 +173,9 @@
       li.innerHTML = '<a href="' + a.u + '" target="_blank" rel="noopener"><span class="tn">' + pad2(i + 1) + '</span><span>' + esc(a.t) + '</span></a>';
       all.appendChild(li);
     });
-    $('#tocToggle').textContent = tocLabel();
+    var tt = $('#tocToggle');
+    tt.textContent = tocLabel();
+    tt.setAttribute('aria-expanded', tocOpen ? 'true' : 'false');
   }
   function buildWriting() { buildCats(); buildCarousel(); buildToc(); }
 
@@ -245,7 +258,9 @@
   /* ---------- toc toggle ---------- */
   $('#tocToggle').addEventListener('click', function () {
     tocOpen = !tocOpen; var all = $('#tocAll'); all.hidden = !tocOpen;
-    this.textContent = tocLabel(); if (tocOpen) observeReveals();
+    this.textContent = tocLabel();
+    this.setAttribute('aria-expanded', tocOpen ? 'true' : 'false');
+    if (tocOpen) observeReveals();
   });
 
   /* ---------- carousel nav ---------- */
@@ -254,6 +269,23 @@
 
   /* ---------- year ---------- */
   $('#year').textContent = String(new Date().getFullYear());
+
+  /* ---------- phone (montado em runtime para dificultar scraping) ---------- */
+  (function () {
+    var a = $('#phoneLink'); if (!a) return;
+    var dd = '11', p1 = '9467', p2 = '8466', n9 = '9';
+    a.href = 'tel:+55' + dd + n9 + p1 + p2;
+    a.textContent = '(' + dd + ') ' + n9 + '.' + p1 + '-' + p2;
+  })();
+
+  /* ---------- reduced motion: pausar vídeo do hero ---------- */
+  if (reduce) {
+    var hv = $('.hero-video');
+    if (hv) {
+      hv.removeAttribute('autoplay'); hv.pause();
+      hv.addEventListener('canplay', function () { hv.pause(); }, { once: true });
+    }
+  }
 
   /* ---------- init ---------- */
   applyStaticLang();
