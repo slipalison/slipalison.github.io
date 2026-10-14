@@ -1,0 +1,20 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "alisonamorim",
+	"compatibility_date": "2026-10-08",
+	// Só assets estáticos, sem script: o que está em dist/ (scripts/build.mjs)
+	// é servido como está, com os cabeçalhos de dist/_headers.
+	"assets": {
+		"directory": "./dist",
+		"not_found_handling": "404-page"
+	},
+	// Domínio próprio: o wrangler cria os registros DNS e o certificado.
+	// O www responde aqui e a regra de redirecionamento da zona (painel da
+	// Cloudflare, Rules > Redirect Rules) manda para a raiz com 301.
+	"routes": [
+		{ "pattern": "alisonamorim.com", "custom_domain": true },
+		{ "pattern": "www.alisonamorim.com", "custom_domain": true }
+	],
+	"workers_dev": false,
+	"preview_urls": false
+}

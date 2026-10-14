@@ -245,6 +245,9 @@ h1, h2, h3, .name, .plate-title, .pill-title, .work-name, .ph-mark { font-family
 .nf-home { display: inline-flex; align-items: center; min-height: 44px; margin-top: 1.5rem; font-family: var(--mono); font-size: .9rem; border-bottom: 2px solid var(--ink); }
 .nf-home:hover { opacity: .6; }
 
+/* ===== noscript (classe, e não style="", por causa da CSP do _headers) ===== */
+.noscript-note { padding: 2rem; text-align: center; }
+
 /* ===== reveal ===== */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
 .reveal.in { opacity: 1; transform: none; }

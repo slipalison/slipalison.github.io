@@ -1,0 +1,18 @@
+# Cabeçalhos do Worker (Cloudflare static assets). Não é servido como arquivo.
+# A CSP lista cada origem externa que o site usa; ao incluir uma nova (fonte,
+# embed, API), acrescente-a aqui ou o navegador bloqueia em silêncio:
+#   fonts.googleapis.com / fonts.gstatic.com   Syne, Inter e IBM Plex Mono
+#   www.linkedin.com                           embeds dos artigos (app.js)
+#   api.github.com                             estrelas dos repositórios (app.js)
+# O HSTS vem da zona, não daqui.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; frame-src https://www.linkedin.com; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+
+# Vídeo e fotos são pesados e mudam pouco. Sem hash no nome, então uma semana
+# e não um ano: troca de mídia aparece para todos em até 7 dias.
+/assets/media/*
+  Cache-Control: public, max-age=604800
