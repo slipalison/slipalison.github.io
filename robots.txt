@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://slipalison.github.io/sitemap.xml
+Sitemap: https://alisonamorim.com/sitemap.xml
