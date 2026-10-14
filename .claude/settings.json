@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "leis-de-ux": {
+      "source": {
+        "source": "github",
+        "repo": "slipalison/leis-de-ux"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "leis-de-ux@leis-de-ux": true
+  }
+}

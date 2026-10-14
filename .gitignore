@@ -4,3 +4,5 @@ dist/
 auditoria-ux/
 _*.js
 _*.png
+.claude/rules/leis-de-ux
+.claude/settings.local.json
