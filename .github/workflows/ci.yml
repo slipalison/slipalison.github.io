@@ -1,0 +1,71 @@
+name: CI
+
+# A esteira do site é uma chamada só ao pipeline.yml de
+# slipalison/github-workflows, a porta de entrada de todo repositório de
+# aplicação. Toda a lógica mora lá; aqui só se dizem os parâmetros.
+#
+# Em paralelo:
+#   versao     a próxima versão pelos Conventional Commits; commit fora do
+#              padrão reprova o run (ver .claude/rules/commits.md)
+#   qualidade  `npm ci --ignore-scripts`, `npm run build` e `npm test`, que
+#              confere o dist/ (nada do repositório vai para o ar)
+#   seguranca  Gitleaks, TruffleHog, Semgrep, Trivy no package-lock, SBOM e,
+#              por ser repositório público, CodeQL
+#   sonar      dispensado (ver sonar_dispensa)
+# e depois o `Portao`, um check só que reprova se qualquer um reprovou. Na main,
+# depois de tudo verde, o `cloudflare` roda `wrangler deploy` (cloudflare.yml do
+# github-workflows) e publica em https://alisonamorim.com; só então o `lancar`
+# cria a tag e a release.
+#
+# O GitHub Pages (slipalison.github.io) continua publicando a main por conta
+# própria; o canonical das páginas aponta para alisonamorim.com.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions: read-all
+
+jobs:
+  esteira:
+    # Um workflow reutilizável nunca recebe mais do que quem chama concede aqui.
+    permissions:
+      contents: write # a tag e a release (lancar, só na main)
+      packages: write # pedido de forma estática pelo job `alias` do lancar.yml, que é pulado
+      security-events: write # SARIF das varreduras e do CodeQL
+      actions: read
+    uses: slipalison/github-workflows/.github/workflows/pipeline.yml@main
+    with:
+      # O site já está no ar há tempo: a primeira tag é a 1.0.0.
+      versao_inicial: '1.0.0'
+
+      # ----------------------------------------------------------- cloudflare --
+      # O wrangler.jsonc diz o nome do Worker, os assets (dist/) e o domínio.
+      # Secrets: CLOUDFLARE_API_TOKEN (token de conta, modelo "Edit Cloudflare
+      # Workers", com a zona alisonamorim.com) e CLOUDFLARE_ACCOUNT_ID.
+      cloudflare: true
+      cloudflare_url: https://alisonamorim.com
+
+      # ------------------------------------------------------------ qualidade --
+      # Site estático sem código de aplicação para cobrir: o teste é do build.
+      componentes: '[{"nome":"site","linguagem":"node","versao":"24","cobertura":0}]'
+
+      # ------------------------------------------------------------ seguranca --
+      # Repositório público: o CodeQL é gratuito e publica no Code scanning.
+      linguagens_codeql: '["javascript"]'
+      publicar_sarif: auto
+
+      # ---------------------------------------------------------------- sonar --
+      # Repositório público entra no SonarCloud gratuito sem contar no limite de
+      # linhas privadas. Para ligar: criar o projeto slipalison_slipalison.github.io,
+      # o secret SONAR_TOKEN e trocar a dispensa por sonar_projeto.
+      sonar_dispensa: 'Site estatico pessoal (HTML, CSS e JS sem build); projeto ainda nao criado no SonarCloud.'
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
