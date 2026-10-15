@@ -2,7 +2,7 @@
 
 Portfólio de **Alison Amorim** — Tech Manager / Principal Engineer.
 
-🔗 **Ao vivo:** https://slipalison.github.io/
+🔗 **Ao vivo:** https://alisonamorim.com/ (o endereço oficial). Este repositório continua publicado em https://slipalison.github.io/ como espelho; canonical, Open Graph, JSON-LD e robots.txt apontam para o domínio próprio, para os buscadores indexarem só ele.
 
 Site estático (HTML/CSS/JS puro, sem build). Tema **editorial preto & branco**, tipografia bold (Syne), hero em vídeo, faixas com parallax, **toggle de idioma PT/EN** e carrossel de artigos com **embeds do LinkedIn** filtrados por categoria. Conteúdo derivado do currículo profissional.
 
